@@ -1,7 +1,8 @@
 // script.js
 
-window.logCheckpoints = true // set to true/false to add/remove checkpoint logs to clear room for your own debugging
+window.logCheckpoints = true // set to true/false to add/remove checkpoint logs to clear room for your own debugging 
 
+const mainElement = document.querySelector('main')
 
 // script.js
 
@@ -15,28 +16,21 @@ document.addEventListener('DOMContentLoaded', () => {
    * Hint: don't forget to set the entry property inside JournalEntry to 
    * the current entry for each journal-entry element.
    */
-
-  let url = ""  // SET URL 
+  let url = "https://cse110lab6.herokuapp.com/entries"  // SET URL 
 
   fetch(url)
-    .then( /* FILL IN RESPONSE HANDLING HERE */ )
+    .then(response => response.json())
     .then(entries => {
       entries.forEach((entry) => {
        
-        let newPost;  
-
+        let newPost;
 
         // CODE GOES HERE vvv
-        
+        newPost = document.createElement('journal-entry')
+        newPost.entry = entry
 
-
-
-
-
-
-
+        mainElement.appendChild(newPost)
         // CODE GOES HERE ^^^
-
 
 
         /* ------------- do not edit this code, it is for your debugging purposes ------------- */
