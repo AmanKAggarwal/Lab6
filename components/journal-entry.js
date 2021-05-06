@@ -123,7 +123,6 @@ class JournalEntry extends HTMLElement {
       entryAudio.controls = true
       entryArticle.appendChild(entryAudio)
 
-      console.log(entryArticle)
       // CODE GOES HERE ^^^
       
 
